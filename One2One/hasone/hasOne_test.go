@@ -54,13 +54,21 @@ func TestInsert(t *testing.T){
 	}
 }
 
-// 删除关联；清空关联
+// 测试查询数据
+func TestQuery(t *testing.T){
+	players := []Player{}
+
+	// 查询所有信息
+	db.Debug().Preload("Role").Find(&players)
 
 
-// 测试更新数据
+	// TODO: 查询指定的列没有用 可能只有一对多能用?
+	//db.Debug().Model(&Player{}).Preload("Role", func(tx *gorm.DB) *gorm.DB {
+	//	return tx.Select("name")
+	//}).Find(&players)
 
 
-// 测试添加关联
-
-
-// 测试关联查询数据
+	for _,player := range players{
+		fmt.Println(player)
+	}
+}
