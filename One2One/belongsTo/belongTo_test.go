@@ -47,6 +47,16 @@ func TestInsert(t *testing.T){
 }
 
 
+func TestDelete(t *testing.T){
+	player := Player{}
+	db.First(&player)
+	fmt.Println(player)
+
+	db.Delete(&player)
+}
+
+
+
 func TestQuery(t *testing.T){
 	players := []Player{}
 

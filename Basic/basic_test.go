@@ -133,6 +133,7 @@ func TestQueryOne(t *testing.T){
 	db.First(&newPlayer,4)
 	fmt.Println(newPlayer)
 
+	//db.Where("Username = ?","xiamu").First(&player)
 }
 
 
