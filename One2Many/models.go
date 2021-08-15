@@ -28,5 +28,4 @@ type Hero struct {
 
 	// 第三种
 	PlayerName 	string
-
 }
